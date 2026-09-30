@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Happy Birthday Pragyan 💕 | A Journey of Love</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+  
+  <!-- Google Fonts: Elegant Serifs, Romantic Handwriting & Clean Modern Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Early Scroll Restoration: Always start from Section 1 on page refresh / reload -->
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  </script>
+</head>
+<body>
+
+  <!-- Floating Romantic Atmosphere Canvas (Hearts & Sparkles) -->
+  <canvas id="ambientCanvas"></canvas>
+
+  <!-- Celebration Fireworks & Cracker Canvas -->
+  <canvas id="celebrationCanvas"></canvas>
+
+  <!-- Sound / Music Floating Control -->
+  <div class="audio-control-container" id="audioToggleBtn" title="Toggle Romantic Melody">
+    <div class="vinyl-disc" id="vinylDisc">
+      <div class="vinyl-center">💖</div>
+    </div>
+    <div class="audio-waves" id="audioWaves">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <span class="audio-label">Music</span>
+  </div>
+
+  <!-- Top Progress Bar & Step Dots -->
+  <nav class="story-nav" aria-label="Story Progress">
+    <div class="nav-track">
+      <div class="nav-step active" data-step="1" title="Welcome">
+        <span class="step-dot"></span>
+        <span class="step-label">Welcome</span>
+      </div>
+      <div class="nav-line"></div>
+      <div class="nav-step" data-step="2" title="The Wish">
+        <span class="step-dot"></span>
+        <span class="step-label">The Wish</span>
+      </div>
+      <div class="nav-line"></div>
+      <div class="nav-step" data-step="3" title="Memories">
+        <span class="step-dot"></span>
+        <span class="step-label">Memories</span>
+      </div>
+      <div class="nav-line"></div>
+      <div class="nav-step" data-step="4" title="Love Letter" style="display:none">
+        <span class="step-dot"></span>
+        <span class="step-label">Letter</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Viewport Slider Container -->
+  <main class="slider-wrapper" id="sliderWrapper">
+
+    <!-- ======================================================================= -->
+    <!-- SECTION 1: HERO / HOME PAGE (FULL IMAGE & TEXT ANIMATION)               -->
+    <!-- ======================================================================= -->
+    <section class="story-section section-hero active" id="section1">
+      <!-- Fullscreen Background Image with Subtle Ken Burns Animation -->
+      <div class="hero-fullscreen-wrap">
+        <img id="heroImage" src="hero.webp" alt="Pragyan & Us" class="hero-fullscreen-img hero-pop-anim">
+        <div class="hero-dark-overlay"></div>
+        <div class="hero-sparkle-overlay"></div>
+      </div>
+      
+      <!-- Animated Hero Typography & Action Overlay -->
+      <div class="hero-content-overlay">
+        <div class="tag-pill anim-fade-up anim-delay-1">
+          <span class="sparkle-icon">✨</span> A Special Celebration For You <span class="sparkle-icon">✨</span>
+        </div>
+
+        <h1 class="hero-title anim-fade-up anim-delay-2" id="heroTagline">
+          Your Special Day Is Here… 🎂✨
+        </h1>
+
+        <p class="hero-subtitle anim-fade-up anim-delay-3" id="heroSubtitle">
+          A day meant just for you.
+        </p>
+
+        <p class="hero-journey-text anim-fade-up anim-delay-4" id="heroJourneyText">
+          So, let me take you on a little journey filled with love, memories, smiles, and surprises. ❤️
+        </p>
+
+        <div class="hero-ready-box anim-fade-up anim-delay-5">
+          <p class="hero-ready-prompt" id="heroReadyPrompt">
+            Ready, Birthday Girl? 💕
+          </p>
+          <button class="romantic-btn glow-pulse" id="btnGoToCandle">
+            <span class="btn-text">I'm Ready! Let's Go 💖</span>
+            <span class="btn-shine"></span>
+            <span class="btn-particles">
+              <i>✨</i><i>💕</i><i>🌸</i>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" id="scrollIndicatorHero">
+        <span>Click ready to begin journey</span>
+        <div class="arrow-down"></div>
+      </div>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- SECTION 2: CANDLE BLOW & CELEBRATION (CRACKERS, BALLOONS, POPUPS)       -->
+    <!-- ======================================================================= -->
+    <section class="story-section section-candle" id="section2">
+      <div class="candle-ambient-glow"></div>
+
+      <div class="candle-stage-container">
+        
+        <!-- Pre-Blow Header & Instructions -->
+        <div class="cake-header" id="cakeHeader">
+          <span class="section-badge">Step Two • The Wish</span>
+          <h2 class="section-title cursive-title" id="cakeSectionTitle">Make a Wish in Your Heart 🕯️</h2>
+          <p class="section-description" id="cakeInstructions">
+            Close your eyes, think of your sweetest wish, and blow out the candle!
+          </p>
+        </div>
+
+        <!-- 3D Layered Birthday Cake & Candle Interactive Component -->
+        <div class="cake-scene-wrapper">
+          <div class="cake-display" id="cakeInteractive">
+            
+            <!-- Candle Flame & Smoke -->
+            <div class="candle-assembly" id="candleAssembly">
+              <div class="smoke-puff" id="smokePuff"></div>
+              <div class="flame-halo" id="flameHalo"></div>
+              <div class="candle-flame" id="candleFlame">
+                <div class="flame-inner"></div>
+                <div class="flame-sparkles"></div>
+              </div>
+              <div class="candle-wick"></div>
+              <div class="candle-stick">
+                <div class="candle-stripes"></div>
+              </div>
+            </div>
+
+            <!-- Delicious Cake Layers -->
+            <div class="cake-plate"></div>
+            <div class="cake-layer layer-bottom">
+              <div class="frosting-drip drip-1"></div>
+              <div class="frosting-drip drip-2"></div>
+              <div class="frosting-drip drip-3"></div>
+              <div class="cherry-row">
+                <span>🍓</span><span>🫐</span><span>🍓</span><span>🫐</span><span>🍓</span>
+              </div>
+            </div>
+            <div class="cake-layer layer-middle">
+              <div class="frosting-swirls"></div>
+            </div>
+            <div class="cake-layer layer-top">
+              <div class="cake-cream-peaks"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blow Action Button -->
+        <div class="blow-action-wrap" id="blowActionWrap">
+          <button class="romantic-btn blow-btn" id="btnBlowCandle">
+            <span class="btn-icon">🌬️</span>
+            <span class="btn-text" id="blowButtonText">Blow the Candle ✨</span>
+            <span class="btn-shine"></span>
+          </button>
+          <span class="blow-hint">Tip: Tap the button or tap the flame directly!</span>
+        </div>
+
+        <!-- Post-Blow Celebration Popout Banner (Animated) -->
+        <div class="celebration-popout hidden" id="celebrationPopout">
+          <div class="popout-sparkle-border">
+            <div class="popout-badge">🎉 Happy Birthday 🎉</div>
+            <h2 class="celebration-h1" id="celebrationTitle">
+              Happy Birthday to you, Pragyan! 🎉🎂💖
+            </h2>
+            <p class="celebration-subtext" id="celebrationMessage">
+              May your life always be filled with boundless laughter, pure happiness, and all the love you deserve!
+            </p>
+            
+            <div class="memories-prompt-box">
+              <p class="memories-prompt-text">
+                Every single day with you is a treasure. Let's recall some of our favorite memories together… 📸✨
+              </p>
+              <button class="romantic-btn memory-launch-btn" id="btnGoToMemories">
+                <span class="btn-text" id="nextButtonText">Walk Down Memory Lane 📸💕</span>
+                <span class="btn-shine"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Floating Balloon Spawner Container -->
+        <div class="balloon-container" id="balloonContainer"></div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- SECTION 3: 20 MEMORIES GALLERY (MODERN, CLASSY, STYLISH, ROMANTIC)     -->
+    <!-- ======================================================================= -->
+    <section class="story-section section-memories" id="section3">
+      <div class="memories-wrapper">
+        
+        <!-- Header & Progress Counter -->
+        <header class="memories-header">
+          <span class="section-badge">Step Three • Our Journey</span>
+          <h2 class="section-title cursive-title">20 Reasons Why You Are My World ✨</h2>
+          <p class="section-description">
+            Each picture holds a moment, each moment holds a piece of my heart. Tap any photo to relive our story.
+          </p>
+
+          <div class="memory-status-bar">
+            <div class="memory-progress-track">
+              <div class="memory-progress-fill" id="memoryProgressFill"></div>
+            </div>
+            <div class="memory-counter-text" id="memoryCounterText">
+              <span>Viewed: </span><b id="viewedCount">0</b> / 20 memories explored 💕
+            </div>
+          </div>
+        </header>
+
+        <!-- 20 Modern Romantic Polaroid / Glass Cards Grid -->
+        <div class="memories-grid" id="memoriesGrid">
+          <!-- Dynamically populated from memories-data.js -->
+        </div>
+
+        <!-- Bottom of Memories Gallery Action Prompt -->
+        <div class="memories-bottom-action">
+          <p class="memories-bottom-hint">You've reached the end of our memory lane... but the sweetest surprise is waiting for you! 💌</p>
+          <button class="romantic-btn memories-bottom-btn" id="btnBottomToLetter">
+            <span class="btn-text">Open Pragyan's Love Letter 💌✨</span>
+            <span class="btn-shine"></span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- FLOATING / STICKY MESSAGE BOX INBOX BUTTON (Surprise Trigger) - HIDDEN -->
+      <div class="inbox-surprise-dock" id="inboxSurpriseDock" style="display:none !important">
+        <div class="inbox-hint-speech">
+          <span class="hint-text">You have an unread letter! Check the inbox please... 📬✨</span>
+          <div class="speech-arrow"></div>
+        </div>
+        <button class="inbox-float-btn" id="btnOpenInbox" aria-label="Open Special Birthday Letter">
+          <div class="envelope-icon-wrap">
+            <span class="envelope-emoji">💌</span>
+            <span class="unread-badge">1</span>
+          </div>
+          <span class="inbox-btn-label">Open Birthday Letter</span>
+          <span class="pulse-glow-ring"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- SECTION 4: THE LOVE LETTER - Hidden; accessible only via popup modal    -->
+    <!-- ======================================================================= -->
+    <section class="story-section section-letter" id="section4" style="display:none">
+      <div class="letter-ambient-backdrop"></div>
+
+      <div class="letter-stage">
+        
+        <header class="letter-header">
+          <span class="section-badge">Step Four • From My Heart</span>
+          <h2 class="section-title cursive-title">A Letter Written Just For You 💕</h2>
+          <p class="section-description">A small piece of what my heart feels for you every single day.</p>
+        </header>
+
+        <!-- Interactive 3D Envelope Component -->
+        <div class="envelope-3d-wrapper" id="envelope3DWrapper">
+          <div class="envelope-box" id="envelopeBox">
+            <div class="envelope-flap" id="envelopeFlap">
+              <div class="wax-seal" id="waxSeal" title="Click to Open Letter">
+                <span class="seal-heart">P ❤️</span>
+                <span class="seal-tap-hint">Tap to Open</span>
+              </div>
+            </div>
+            <div class="envelope-pocket"></div>
+            <div class="envelope-back"></div>
+            
+            <!-- The Romantic Parchment Letter -->
+            <div class="parchment-letter" id="parchmentLetter">
+              <div class="letter-vintage-texture"></div>
+              
+              <div class="letter-header-row">
+                <div class="letter-date-stamp" id="letterDateStamp">On Your Special Birthday ✨</div>
+                <div class="letter-wax-mini">❤️</div>
+              </div>
+
+              <div class="letter-salutation" id="letterSalutation">My Dearest Pragyan,</div>
+
+              <div class="letter-body-paragraphs" id="letterBodyParagraphs">
+                <!-- 300+ words generated from memories-data.js -->
+              </div>
+
+              <div class="letter-sign-off">
+                <p class="letter-closing" id="letterClosing">Forever & Always Yours,</p>
+                <p class="letter-signature handwriting" id="letterSignature">With all my love ❤️</p>
+                <div class="letter-heart-stamp">💖</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post Letter Controls & Replay -->
+        <div class="letter-actions-bar" id="letterActionsBar">
+          <button class="romantic-btn shower-btn" id="btnShowerLove">
+            <span>Shower Love 💖🌸</span>
+          </button>
+          <button class="romantic-btn secondary-btn" id="btnReplayJourney">
+            <span>Replay From Beginning ↺</span>
+          </button>
+        </div>
+
+        <footer class="romantic-footer">
+          <p>Crafted with endless love for <b>Pragyan</b> • Happy Birthday My Love 💕</p>
+        </footer>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================= -->
+  <!-- MODAL: DETAILED MEMORY POPUP / LIGHTBOX (ANIMATED & NAVIGABLE)          -->
+  <!-- ======================================================================= -->
+  <div class="memory-modal-overlay" id="memoryModalOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <!-- Lively Loving Animated Background -->
+    <div class="modal-love-bg" id="modalLoveBg">
+      <div class="modal-glow-orb orb-1"></div>
+      <div class="modal-glow-orb orb-2"></div>
+      <div class="modal-glow-orb orb-3"></div>
+      <canvas id="modalLoveCanvas" class="modal-love-canvas"></canvas>
+    </div>
+
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close memory modal">✕</button>
+      
+      <div class="modal-image-col">
+        <img id="modalImg" src="" alt="Memory Photo" class="modal-main-img">
+        <div class="modal-badge-index" id="modalIndexBadge">Memory #1</div>
+      </div>
+
+      <div class="modal-content-col">
+        <div class="modal-date-tag" id="modalDateTag">Date Tag</div>
+        <h3 class="modal-title cursive-title" id="modalTitle">Memory Title</h3>
+        
+        <div class="modal-story-wrap">
+          <p class="modal-description" id="modalDescription">Memory Story description...</p>
+        </div>
+
+        <div class="modal-footer-nav">
+          <button class="nav-arrow-btn" id="modalPrevBtn" title="Previous Memory">
+            <span>← Previous</span>
+          </button>
+          
+          <button class="heart-react-btn" id="modalHeartReactBtn">
+            <span class="react-heart">❤️</span>
+            <span class="react-count" id="reactCount">Loved!</span>
+          </button>
+
+          <button class="nav-arrow-btn" id="modalNextBtn" title="Next Memory">
+            <span>Next →</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio Element (Fallback & Extensible) -->
+  <audio id="bgAudio" loop preload="auto">
+    <!-- Replace this src with any favorite romantic song MP3 if desired -->
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-piano-112199.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ======================================================================= -->
+  <!-- OTP VERIFICATION MODAL (Gate before Love Letter)                         -->
+  <!-- ======================================================================= -->
+  <div class="otp-modal-overlay" id="otpModalOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="otp-modal-card">
+      <!-- Decorative top strip -->
+      <div class="otp-modal-topstrip">💌</div>
+
+      <!-- Idle state: send OTP -->
+      <div class="otp-phase" id="otpPhaseSend">
+        <h2 class="otp-modal-title">A Secret Awaits You 🔐</h2>
+        <p class="otp-modal-sub">Before you open this letter, I need to know it's really you 🥺</p>
+        <p class="otp-modal-sub" style="font-size:0.82rem; opacity:0.7; margin-top:6px;">A one-time code will be sent to Pragyan's email. Enter it below to unlock the letter 💖</p>
+        <button class="otp-send-btn" id="otpSendBtn">
+          <span id="otpSendBtnText">Send OTP to My Email 📩</span>
+        </button>
+        <p class="otp-modal-error" id="otpSendError" style="display:none;"></p>
+      </div>
+
+      <!-- After OTP sent: enter code -->
+      <div class="otp-phase" id="otpPhaseVerify" style="display:none;">
+        <h2 class="otp-modal-title">Enter Your Secret Code 🔑</h2>
+        <p class="otp-modal-sub">Check your email for the 6-digit code and enter it below 💌</p>
+        <div class="otp-input-row">
+          <input class="otp-input" id="otpInput" type="text" inputmode="numeric" maxlength="6" placeholder="• • • • • •" autocomplete="off" />
+        </div>
+        <button class="otp-send-btn" id="otpVerifyBtn">Unlock My Letter 💕</button>
+        <p class="otp-resend-link" id="otpResendLink">Didn't get it? <span id="otpResendAction">Resend</span></p>
+        <p class="otp-modal-error" id="otpVerifyError" style="display:none;"></p>
+      </div>
+
+      <!-- Success flash -->
+      <div class="otp-phase" id="otpPhaseSuccess" style="display:none;">
+        <div class="otp-success-icon">💖</div>
+        <h2 class="otp-modal-title">It's really you! 🥰</h2>
+        <p class="otp-modal-sub">Opening your letter...</p>
+      </div>
+
+      <button class="otp-close-btn" id="otpCloseBtn" aria-label="Close">✕</button>
+    </div>
+  </div>
+
+  <!-- ======================================================================= -->
+  <!-- LETTER INBOX MODAL POPUP (Opens when clicking "Open Pragyan's Love Letter") -->
+  <!-- ======================================================================= -->
+  <div class="letter-inbox-modal-overlay" id="letterInboxModalOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="letter-inbox-modal-card">
+      <button class="letter-inbox-close-btn" id="letterInboxCloseBtn" aria-label="Close letter">✕</button>
+
+      <div class="letter-inbox-header">
+        <span class="section-badge">💌 A Letter Just For You</span>
+        <h2 class="cursive-title" style="font-size:1.7rem; margin:10px 0 4px; color: var(--accent-gold);">A Letter Written Just For You 💕</h2>
+        <p style="font-size:0.88rem; color: var(--text-secondary);">A small piece of what my heart feels for you every single day.</p>
+      </div>
+
+      <!-- Interactive 3D Envelope Component (popup copy) -->
+      <div class="envelope-3d-wrapper" id="popupEnvelope3DWrapper">
+        <div class="envelope-box" id="popupEnvelopeBox">
+          <div class="envelope-flap" id="popupEnvelopeFlap">
+            <div class="wax-seal" id="popupWaxSeal" title="Click to Open Letter">
+              <span class="seal-heart">P ❤️</span>
+              <span class="seal-tap-hint">Tap to Open</span>
+            </div>
+          </div>
+          <div class="envelope-pocket"></div>
+          <div class="envelope-back"></div>
+
+          <!-- The Romantic Parchment Letter -->
+          <div class="parchment-letter" id="popupParchmentLetter">
+            <div class="letter-vintage-texture"></div>
+
+            <div class="letter-header-row">
+              <div class="letter-date-stamp" id="popupLetterDateStamp">On Your Special Birthday ✨</div>
+              <div class="letter-wax-mini">❤️</div>
+            </div>
+
+            <div class="letter-salutation" id="popupLetterSalutation">My Dearest Pragyan,</div>
+
+            <div class="letter-body-paragraphs" id="popupLetterBodyParagraphs">
+              <!-- Populated by script.js -->
+            </div>
+
+            <div class="letter-sign-off">
+              <p class="letter-closing" id="popupLetterClosing">Forever &amp; Always Yours,</p>
+              <p class="letter-signature handwriting" id="popupLetterSignature">With all my love ❤️</p>
+              <div class="letter-heart-stamp">💖</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Letter Controls -->
+      <div class="letter-actions-bar" id="popupLetterActionsBar" style="margin-top:24px; display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+        <button class="romantic-btn shower-btn" id="popupBtnShowerLove">
+          <span>Shower Love 💖🌸</span>
+        </button>
+        <button class="letter-inbox-close-bottom romantic-btn secondary-btn" id="letterInboxCloseBtnBottom">
+          <span>Close Letter 💌</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="memories-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
